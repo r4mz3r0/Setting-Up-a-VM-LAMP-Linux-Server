@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+
+\usepackage{physics}
+\usepackage{siunitx} 
+\usepackage{enumerate} 
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+
+\begin{document}
+
+\title{ Setting Up a VM, LAMP, Linux Server}
+\author{Ramiro Gonzalez}
+\date{January 10, 2019}
+
+\maketitle
+
+\begin{Objective}
+	This project will consist of getting familiar with using virtual box, installing virtual machines, and setting up a web server.  There are multiple ways to set up Linux Apache MySql PhP (LAMP) server depending on the type of operating system. 
+\end{Objective}
+
+\section*{Background}
+	Web hosting makes an application available to others.  By setting up your own server you will be able to have more control over it, in the process learn how to secure it and troubleshoot immediately. This project will develop your skills in system administration and help you establish your linux skills. 
+\section*{Material}
+ \color{black}
+\begin{todolist}
+    \item Computer 
+    \item Internet Connection
+    \item Unzip program (7zip, winrar) 
+\end{todolist}
+\section{Tasks}
+Complete the following tasks. Note that different operating systems may require different steps. 
+\section*{Task 1}
+Installing Virtual Box - 
+A hypervisor or virtual machine manager (VMM) is computer software, firmware or hardware that creates and runs virtual machines
+\begin{todolist}
+	  \item Download Virtual Box from \color{red} \href{https://www.virtualbox.org/wiki/Downloads}{virtualbox.org/wiki/Downloads}\color{black} 
+	  \item Under \textbf{VirtualBox 6.0.0 platform packages} download the file for you operating system. For windows it is the \texit{windows host}. 
+	  \item Install Virtual Box
+\end{todolist}
+\section*{Task 2} 
+Virtual machines emulate a physical computers. Virtual box is able to run different operating systems. We must download and install a virtual machine image, that is an Operating System that will run in Virtual box from osboxes.org.  The optional part requires extra steps and knowledge of linux server. 
+\begin{todolist}
+    \item Go to \color{red}
+    \href{https://www.osboxes.org/virtualbox-images/}{osboxes.org/virtualbox-images/} \color{black}
+    \item Download Ubuntu VM, a vdi (VirtualBox Disk Image) file \color{red} \href{https://www.osboxes.org/ubuntu/}{osboxes.org/ubuntu/} \color{black}
+    \item (Optional) Download Ubuntu Server \color{red}
+    \href{https://www.osboxes.org/ubuntu-server/}{osboxes.org/ubuntu-server/} \color{black}
+    \item Once download has finished extract the folder. Inside the folder you will find a .vdi file. 
+\end{todolist}
+
+\section*{Task 3}
+Installing the VM 
+\begin{todolist}
+    \item Click on \textbf{New} 
+    \item Name the virtual box "Ubuntu" with version number. 
+    \item Check \textbf{Use an existing virtual hard disk file } 
+    \item Click on the folder Icon and find the .vdi file
+    \item Click on \textbf{Create}
+\end{todolist}
+\section*{Task 4}
+Running and Login  into the virtual machine. 
+\begin{todolist}
+    \item Run the virtual machine
+    \item Login username is \textit{osboxes} and password is \textit{osboxes.org}
+\end{todolist}
+\section*{ Installing LAMP}
+\section*{Task 5}
+\begin{todolist}
+    \item Open a terminal 
+    \item  Type the following \\
+    \begin{lstlisting}
+    sudo apt-get install lamp-server^
+    \end{lstlisting}
+    \item Start Apache Server 
+    \begin{lstlisting}
+    sudo service apache2 start
+    \end{lstlisting}
+    \item Open a browser and type \textbf{127.0.0.1} or \textbf{http://localhost}
+    \item The html file is located in var/www/html/index.html
+    \item To start or restart 
+    \begin{lstlisting}
+    sudo service apache2 restart
+    \end{lstlisting}
+    \item To stop
+    \begin{lstlisting}
+    sudo service apache2 stop
+    \end{lstlisting}
+\end{todolist}
+\section*{Summary}
+A virtual machine has been successfully installed. Your virtual machines has LAMP the required tools for development. Your localhost should consists of a webpage named \textbf{Apache2 Ubuntu Defualt Page}. You should be able to install different types of Operating Systems. 
+You may make your localhost available to everyone by configuring your VM network settings.You may customize the Ubuntu VM. If you decided to install the non graphical user interface, you may need to do some extra steps. Contact Project Leader ramirogonzalez@mercedenergy.com
+\end{document}
